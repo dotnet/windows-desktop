@@ -15,7 +15,7 @@ The Microsoft.Windows.SDK.Contracts NuGet packages are designed to only support 
 For new projects, follow these steps to configure **NuGet Settings** in Visual Studio 2017 or Visual Studio 2019 to default to PackageReference:
 
 1.	From the Tools menu of Visual Studio, choose **NuGet Package Manager -> Package Manager Settings**.  
-2.	Under **Package Mangement**, make sure the **“Default package management format:”** specifies **PackageReference**.
+2.	Under **Package Management**, make sure the **“Default package management format:”** specifies **PackageReference**.
 
 #### Existing Projects
 
