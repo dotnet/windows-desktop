@@ -52,11 +52,3 @@ textBox1.Text = latlong;
 ## Feedback / Contributions
 This repo can be used for the reporting of issues found with the Windows SDK NuGet packages. 
 
-### Labels
-We will be monitoring and responding to issues as best we can. Please attempt to avoid filing duplicates of open or closed items when possible. Issues may be tagged with the following labels:
-
-- **bug** – The issue considered to be a bug internally by the dev team. This tag is generally for gaps in implemented behavior. Things marked with bug have a corresponding bug in on Microsoft’s internal bug tracking system.
-- **feature** – Denotes something understood as not working and is not yet implemented.  
-- **duplicate** – The submission is substantially duplicative of an existing issue, and/or has the same underlying cause.
-- **need-repro** – The issue submission is missing fields from the issue template, cannot be reproduced with the information provided, or is not actionable.
-- **discussion / question** – Submissions which are not a bug report or feature request.
