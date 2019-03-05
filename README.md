@@ -1,4 +1,4 @@
-# Windows Desktop Modernization. Guidance and Samples
+# Windows Desktop Application Modernization Guidance
 
 This repo contains valuable information to help you modernize your .NET desktop applications. 
 
@@ -6,7 +6,7 @@ This repo contains valuable information to help you modernize your .NET desktop 
 
 We are considering the next *high level* topics, feel free to suggest new ones in our issues section
 
-### Port apps to .NET Core 3
+### Port app to .NET Core 3
 
 Options to convert WPF and WinForms projects based on .NET Framework to .NET Core 3.
 
@@ -20,12 +20,25 @@ ADO.NET can be used in .NET Core 3 applications, however not all the data source
 
 We have plans to support Entity Framework 6 in Core, and Entity Framework Core is already supported.
 
+Other non-relational data stores available to .NET Core.
+
 ### Connecting to Services
 
 WCF has been partially ported to .NET Core 3. There is no support for WCF server. WCF clients features are documented here.
 
 ### Deployment
 
-## Knwon issues
+## Known issues
+
+- AppDomains
+- Remoting
+- WCF Server
+- WCF Client supported features
+- Non-String Resources
+
 
 ## Samples
+
+- BeanTraders
+- WPF Concepts
+- Memory Game
