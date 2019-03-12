@@ -1,0 +1,25 @@
+# Build output
+[Dd]ebug/
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.dll
+*.exe
+*.pdb
+
+# Nuget packages
+packages/
+
+# User-specific files
+.vs/
+*.suo
+*.user
