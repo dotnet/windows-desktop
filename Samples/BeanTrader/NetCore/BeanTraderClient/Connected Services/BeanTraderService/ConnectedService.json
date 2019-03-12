@@ -1,0 +1,18 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.30201.1201",
+  "ExtendedData": {
+    "inputs": [
+      "http://beantrader.eastus.cloudapp.azure.com:8080/"
+    ],
+    "collectionTypes": [
+      "System.Array",
+      "System.Collections.Generic.Dictionary`2"
+    ],
+    "namespaceMappings": [
+      "*, BeanTraderService"
+    ],
+    "targetFramework": "netcoreapp3.0",
+    "typeReuseMode": "None"
+  }
+}
