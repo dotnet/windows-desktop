@@ -21,7 +21,7 @@ The app makes use of:
 
 The [NetFx](./NetFx) directory contains the .NET Framework app in its original state. The [NetCore](./NetCore) branch contains the solution in its final state after porting the application to .NET Core (while also leaving the .NET Framework project working correctly).
 
-A full writeup of the migration process is available in the [migration steps](MigrationSteps.md) doc and a [video walkthrough](https://youtu.be/5MomsgkWkVw) of the porting process is available on YouTube.
+A full writeup of the migration process is available in the [migration steps](MigrationSteps.md) doc and a [video walkthrough](https://www.youtube.com/watch?v=5MomsgkWkVw&list=PLS__JrkRveTMiWxG-Lv4cBwYfMQ6m2gmt) of the porting process is available on YouTube.
 
 The general steps to port from .NET Framework to .NET Core include:
 
