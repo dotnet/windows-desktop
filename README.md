@@ -2,15 +2,15 @@
 
 This repo contains information to help you modernize your .NET desktop applications. We are prioriizing the following *high level* topics to document and provide samples, but feel free to suggest new topics in our [issues](https://github.com/dotnet/windows-desktop/issues) section.
 
-## Porting WPF and WinForms apps to .NET Core 3
+### Porting WPF and WinForms apps to .NET Core 3
 
 Samples, options, tips and tricks to convert WPF and WinForms projects based on .NET Framework to .NET Core 3.
 
-## Using Windows 10 features in WPF and WinForms apps
+### Using Windows 10 features in WPF and WinForms apps
 
 Windows 10 include a number of APIs that are accessible from Windows 10 SDKs. You can use these APIs in .NET apps by using the Microsoft.Windows.SDK.Contracts NuGet package. [More information](/docs/win10apis/README.md) 
 
-## Data Access
+### Data Access
 
 ADO.NET can be used in .NET Core 3 applications, however not all data source providers are available. 
 
@@ -25,7 +25,7 @@ WCF has been partially ported to .NET Core 3; however, there is no support for W
 ### Deployment
 
 
-## Known issues
+### Known issues
 
 - AppDomains
 - Remoting
