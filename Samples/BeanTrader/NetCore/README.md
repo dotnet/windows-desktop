@@ -18,3 +18,5 @@ The BeanTrader solution is comprised of three projects:
 ## Building and Running the Sample
 
 Building the sample is as easy as using MSBuild (or the dotnet CLI) to compile the solution (or project) and running the sample only requires launching the generated app (though the app's config file may need updated to point at a valid backend server). To make testing the WPF app easier, an instance of the BeanTrader backend service is running in Azure at net.tcp://beantrader.eastus.cloudapp.azure.com:8090/BeanTraderService, though this may not always be available in the future.
+
+If you wish to run against a local backend service (or if the Azure service is unavailable in the future), simply run the BeanTraderServer project prior to launching the client and update App.Config to refer to `localhost` in place of `beantrader.eastus.cloudapp.azure.com`.
