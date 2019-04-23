@@ -23,9 +23,8 @@ In the chapters to come, we will review some of the most exciting features of .N
 
 1. [NET Core 3 Windows Form and WPF support](02_01%20-%20NET%20Core%203.%20Windows%20Form%20and%20WPF%20support.md)
 2. [NET Core vs .NET Framework](02_02%20-%20NET%20Core%20vs%20.NET%20Framework.md)
-3. [NET Core v3 new desktop features](02_03%20-%20NET%20Core%203%20new%20desktop%20features.md)
-4. [Other new features of .NET Core 3](02_04%20-%20Other%20new%20features%20of%20.NET%20Core%203.md)
-5. [Benefits of Open Source](02_05%20-%20Benefits%20of%20Open%20Source.md)
+3. [Other new features of .NET Core 3](02_04%20-%20Other%20new%20features%20of%20.NET%20Core%203.md)
+4. [Benefits of Open Source](02_05%20-%20Benefits%20of%20Open%20Source.md)
 
 
 

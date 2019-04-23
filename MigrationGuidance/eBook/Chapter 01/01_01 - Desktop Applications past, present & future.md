@@ -8,14 +8,9 @@ Before .NET Framework, Visual Basic applications extended it's capabilities with
 
 The launch of .NET Core in July 2016 with ASP.NET support, created a buzz within developers and organizations, and the anticipation was Microsoft would announce the discontinuation of support for WinForm and WPF based desktop applications.
 
-![](../attachments/01_01_01.png)
-
 Until December 2018, when Microsoft announced the support for WinForm and WPF in .NET Core 3.
 
 The ecosystem of developers, using Windows Forms and WPF to develop desktop based applications is healthy and growing. Organizations and developers welcomed the support announcement in .NET Core 3 for WinForms and WPF with both hands.
 
-![](../attachments/01_01_02.png)
-
 Also, the Windows 10 desktop market is increasing and, nearly every enterprise has started transitioning to Windows 10 or has a planned date for upgrades.
 
-![](../attachments/01_01_03.png)
