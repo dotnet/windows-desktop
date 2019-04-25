@@ -4,11 +4,14 @@ The [Microsoft.Windows.SDK.Contracts](https://www.nuget.org/packages/Microsoft.W
 
 ### Requirements
 
-The Microsoft.Windows.SDK.Contracts NuGet packages are designed to only support projects configured to use [Package Reference](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) as their package management format.   
+The Microsoft.Windows.SDK.Contracts NuGet packages are designed for .NET Framework 4.6+ or .NET Core 3.0 and only support projects configured using [Package Reference](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files) as their package management format.   
 
 ## Getting Started
 
 ### Step1 : Configure your project to support [Package Reference](https://docs.microsoft.com/nuget/consume-packages/package-references-in-project-files):
+
+> [!Information]
+> .NET Core and .NET Standard projects already use the `PackageReference` format
 
 #### New Projects
 
@@ -33,7 +36,10 @@ To change an existing project from Packages.Config to use Package Reference in V
 - Windows 10 version 1809
 `Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.17763.144-preview`
 - Windows 10 version 1903 – preview
-`Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.18340.1000-preview -Source https://dotnet.myget.org/F/windows-sdk-beta/api/v3/index.json`
+ `Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.18362.2002-preview`
+
+
+ https://dotnet.myget.org/F/windows-sdk-beta/api/v3/index.json`
 
 ## Get Coding
 
