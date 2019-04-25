@@ -30,8 +30,7 @@ WCF has been partially ported to .NET Core 3; however, there is no support for W
 
 .NET Desktop applications can be deployed with [MSIX](https://docs.microsoft.com/windows/msix/). To create MSIX packages you can use the [Windows Application Packaging Project](https://aka.ms/wapproj) available in  Visual Studio 2019.
 
-> [!Important]
-> To package .NET Core 3 applications you must use Visual Studio 2019 Update 1 Preview or later.
+>Note: To package .NET Core 3 applications you must use Visual Studio 2019 Update 1 Preview or later.
 
 ### Known issues
 
