@@ -6,6 +6,10 @@ This repo contains information to help you modernize your .NET desktop applicati
 
 Samples, options, tips and tricks to convert WPF and WinForms projects based on .NET Framework to .NET Core 3.
 
+- [How to: Port a Windows Forms desktop app to .NET Core](https://docs.microsoft.com/en-us/dotnet/core/porting/winforms)
+- [How to: Port a WPF desktop app to .NET Core](https://docs.microsoft.com/en-us/dotnet/core/porting/wpf)
+
+
 ### Using Windows 10 features in WPF and WinForms apps
 
 Windows 10 include a number of APIs that are accessible from Windows 10 SDKs. You can use these APIs in .NET apps by using the Microsoft.Windows.SDK.Contracts NuGet package. [More information](/docs/win10apis/README.md) 
@@ -24,6 +28,10 @@ WCF has been partially ported to .NET Core 3; however, there is no support for W
 
 ### Deployment
 
+.NET Desktop applications can be deployed with [MSIX](https://docs.microsoft.com/windows/msix/). To create MSIX packages you can use the [Windows Application Packaging Project](https://aka.ms/wapproj) available in  Visual Studio 2019.
+
+> [!Important]
+> To package .NET Core 3 applications you must use Visual Studio 2019 Update 1 Preview or later.
 
 ### Known issues
 
