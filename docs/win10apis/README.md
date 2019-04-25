@@ -32,14 +32,13 @@ To change an existing project from Packages.Config to use Package Reference in V
 
 
 - Windows 10 version 1803
-`Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.17134.2-preview` 
+`Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.17134.1000-preview` 
 - Windows 10 version 1809
-`Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.17763.144-preview`
+`Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.17763.1000-preview`
 - Windows 10 version 1903 – preview
  `Install-Package Microsoft.Windows.SDK.Contracts -Version 10.0.18362.2002-preview`
 
 
- https://dotnet.myget.org/F/windows-sdk-beta/api/v3/index.json`
 
 ## Get Coding
 
