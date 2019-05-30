@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <RootNamespace>BeanTraderClient</RootNamespace>
+    <AssemblyName>BeanTraderClient</AssemblyName>
+    <DefineConstants>NETCORE</DefineConstants>
+    <ApplicationIcon>BeanTrader.ico</ApplicationIcon>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="out\BeanTraderClient\**\*.cs" />
+    <Compile Remove="BeanTrader.cs" />
+    <Compile Remove="ViewModels\OldUnusedViewModel.cs" />
+
+    <Resource Include="BeanTrader.ico" />
+    <Resource Include="**\*.png" />
+
+    <Page Remove="**\Default.Accent.xaml" />
+    <Content Include="Resources\Themes\Default.Accent.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Windsor">
+      <Version>4.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="MahApps.Metro">
+      <Version>1.6.5</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.Common">
+      <Version>2.2.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Azure.KeyVault">
+      <Version>2.3.2</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
+      <Version>2.6.3</Version>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
+      <Version>4.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.1" />
+    <PackageReference Include="Nito.AsyncEx">
+      <Version>5.0.0-pre-05</Version>
+    </PackageReference>
+
+    <!-- WCF packages are included in the Microsoft.Windows.Compatibility package
+         If you don't want to include the entire compatibility pack (though including
+         it is generally recommended), it's also possible to reference specific .NET
+         packages needed by the app.
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.5.3" />
+    -->
+  </ItemGroup>
+</Project>

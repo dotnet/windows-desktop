@@ -1,0 +1,3 @@
+# Ignore publish output other than our manifests and readme
+**/ClickOnceManifests/*/*
+!**/ClickOnceManifests/*/*.manifest

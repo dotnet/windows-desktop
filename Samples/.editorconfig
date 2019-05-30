@@ -1,0 +1,36 @@
+# top-most EditorConfig file
+root = true
+
+[*]
+# (Please don't specify an indent_size here; that has too many unintended consequences.)
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Code files
+[*.{cs,csx,vb,vbx}]
+indent_size = 4
+csharp_style_conditional_delegate_call = true:warning
+csharp_style_inlined_variable_declaration = true:warning
+csharp_style_pattern_matching_over_as_with_null_check = true:error
+csharp_style_pattern_matching_over_is_with_cast_check = true:error
+csharp_style_throw_expression = true:error
+csharp_style_var_elsewhere = true:suggestion
+csharp_style_var_for_built_in_types = true:error
+csharp_style_var_when_type_is_apparent = true:error
+dotnet_style_null_propagation = true:error
+dotnet_style_coalesce_expression = true:error
+dotnet_style_collection_initializer = true:error
+dotnet_style_object_initializer = true:error
+
+# Xml project files
+[*.{xml,csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]
+indent_size = 2
+
+# Xml config files
+[*.{props,targets,ruleset,config,nuspec,resx,vsixmanifest,vsct}]
+indent_size = 2
+
+# JSON files
+[*.json]
+indent_size = 2
