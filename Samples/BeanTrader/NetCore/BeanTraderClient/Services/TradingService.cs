@@ -33,11 +33,11 @@ namespace BeanTraderClient.Services
                     {
                         var newClient = ClientFactory.GetServiceClient();
                         await SetClientCredentialsAsync(newClient).ConfigureAwait(false);
-#if NETCORE
+#if NETCOREAPP
                         await newClient.OpenAsync().ConfigureAwait(false);
 #else
                         newClient.Open();
-#endif // NETCORE
+#endif // NETCOREAPP
                         client = newClient;
                     }
                 }
@@ -61,9 +61,9 @@ namespace BeanTraderClient.Services
             // Begin monitoring the connection for faults or disconnects
             Task.Run(() => CheckForHeartbeatAsync(CancellationSource.Token));
         }
-        
+
         public Task<bool> AcceptTradeAsync(Guid id) =>
-            SafeServiceCallAsync(async () => 
+            SafeServiceCallAsync(async () =>
             {
                 var client = await GetOrOpenClientAsync();
                 return await client.AcceptTradeAsync(id);

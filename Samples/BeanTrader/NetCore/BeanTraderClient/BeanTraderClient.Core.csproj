@@ -6,7 +6,6 @@
     <UseWPF>true</UseWPF>
     <RootNamespace>BeanTraderClient</RootNamespace>
     <AssemblyName>BeanTraderClient</AssemblyName>
-    <DefineConstants>NETCORE</DefineConstants>
     <ApplicationIcon>BeanTrader.ico</ApplicationIcon>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
