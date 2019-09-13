@@ -9,6 +9,7 @@ using System.ServiceModel;
 using System.ServiceModel.Security;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BeanTraderClient.Services
 {
@@ -25,18 +26,26 @@ namespace BeanTraderClient.Services
             // If the client does not exist or is in a bad state, re-create it
             if (client == null || client.State == CommunicationState.Closed || client.State == CommunicationState.Faulted)
             {
-                using (await clientSyncLock.LockAsync())
+                try
                 {
-                    if (client == null || client.State == CommunicationState.Closed || client.State == CommunicationState.Faulted)
+                    using (await clientSyncLock.LockAsync())
                     {
-                        var newClient = ClientFactory.GetServiceClient();
-                        SetClientCredentials(newClient);
-                        newClient.Open();
-                        client = newClient;
+                        if (client == null || client.State == CommunicationState.Closed || client.State == CommunicationState.Faulted)
+                        {
+                            var newClient = ClientFactory.GetServiceClient();
+                            SetClientCredentials(newClient);
+                            newClient.Open();
+                            client = newClient;
+                        }
                     }
-                }
 
-                Connected?.Invoke();
+                    Connected?.Invoke();
+                }
+                catch (EndpointNotFoundException)
+                {
+                    MessageBox.Show("Failed to connect to Bean Trader service. Make sure BeanTraderServer.exe is running");
+                    throw;
+                }
             }
 
             return client;
