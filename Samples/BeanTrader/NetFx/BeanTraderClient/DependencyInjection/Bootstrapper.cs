@@ -6,7 +6,7 @@ namespace BeanTraderClient.DependencyInjection
     public static class Bootstrapper
     {
         private static IWindsorContainer container;
-        private static object syncRoot = new object();
+        private static readonly object syncRoot = new object();
 
         public static IWindsorContainer Container
         {
