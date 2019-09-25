@@ -24,6 +24,10 @@
       <Generator>MSBuild:Compile</Generator>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+
+    <None Update="BeanTrader.pfx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -33,19 +37,10 @@
     <PackageReference Include="MahApps.Metro">
       <Version>1.6.5</Version>
     </PackageReference>
-    <PackageReference Include="Microsoft.Azure.Common">
-      <Version>2.2.1</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Azure.KeyVault">
-      <Version>2.3.2</Version>
-    </PackageReference>
     <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers">
       <Version>2.6.3</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
-    </PackageReference>
-    <PackageReference Include="Microsoft.IdentityModel.Clients.ActiveDirectory">
-      <Version>4.5.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Windows.Compatibility" Version="2.0.1" />
     <PackageReference Include="Nito.AsyncEx">

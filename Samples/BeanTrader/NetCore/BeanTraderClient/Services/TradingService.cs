@@ -1,16 +1,15 @@
 ﻿using BeanTrader.Models;
 using BeanTraderClient.DependencyInjection;
-using Microsoft.Azure.KeyVault;
-using Microsoft.IdentityModel.Clients.ActiveDirectory;
 using Nito.AsyncEx;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
+using System.IO;
 using System.Security.Cryptography.X509Certificates;
 using System.ServiceModel;
 using System.ServiceModel.Security;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace BeanTraderClient.Services
 {
@@ -27,22 +26,30 @@ namespace BeanTraderClient.Services
             // If the client does not exist or is in a bad state, re-create it
             if (client == null || client.State == CommunicationState.Closed || client.State == CommunicationState.Faulted)
             {
-                using (await clientSyncLock.LockAsync())
+                try
                 {
-                    if (client == null || client.State == CommunicationState.Closed || client.State == CommunicationState.Faulted)
+                    using (await clientSyncLock.LockAsync())
                     {
-                        var newClient = ClientFactory.GetServiceClient();
-                        await SetClientCredentialsAsync(newClient).ConfigureAwait(false);
+                        if (client == null || client.State == CommunicationState.Closed || client.State == CommunicationState.Faulted)
+                        {
+                            var newClient = ClientFactory.GetServiceClient();
+                            SetClientCredentials(newClient);
 #if NETCOREAPP
-                        await newClient.OpenAsync().ConfigureAwait(false);
+                            await newClient.OpenAsync().ConfigureAwait(false);
 #else
-                        newClient.Open();
+                            newClient.Open();
 #endif // NETCOREAPP
-                        client = newClient;
+                            client = newClient;
+                        }
                     }
-                }
 
-                Connected?.Invoke();
+                    Connected?.Invoke();
+                }
+                catch (EndpointNotFoundException)
+                {
+                    MessageBox.Show("Failed to connect to Bean Trader service. Make sure BeanTraderServer.exe is running");
+                    throw;
+                }
             }
 
             return client;
@@ -149,7 +156,7 @@ namespace BeanTraderClient.Services
             {
                 client?.Abort();
                 client = null;
-                return default(T);
+                return default;
             }
         }
 
@@ -166,27 +173,18 @@ namespace BeanTraderClient.Services
             }
         }
 
-        private static async Task SetClientCredentialsAsync(BeanTraderServiceClient client)
+        private static void SetClientCredentials(BeanTraderServiceClient client)
         {
-            client.ClientCredentials.ClientCertificate.Certificate = await GetCertificateAsync().ConfigureAwait(false);
+            client.ClientCredentials.ClientCertificate.Certificate = GetCertificate();
             client.ClientCredentials.ServiceCertificate.Authentication.CertificateValidationMode = X509CertificateValidationMode.None;
         }
 
-        private static async Task<X509Certificate2> GetCertificateAsync()
+        // For demo purposes, just load the key from disk so that no one needs to install an untrustworthy self-signed cert
+        // or load from KeyVault (which would complicate the sample)
+        private static X509Certificate2 GetCertificate()
         {
-            var keyVaultClient = new KeyVaultClient(GetAzureAccessTokenAsync);
-            var secretBundle = await keyVaultClient.GetSecretAsync(ConfigurationManager.AppSettings["CertificateSecretIdentifier"]).ConfigureAwait(false);
-            return new X509Certificate2(Convert.FromBase64String(secretBundle.Value));
-        }
-
-        private static async Task<string> GetAzureAccessTokenAsync(string authority, string resource, string scope)
-        {
-            var appCredentials = new ClientCredential(ConfigurationManager.AppSettings["AzureAppId"], ConfigurationManager.AppSettings["AzureAppPassword"]);
-            var context = new AuthenticationContext(authority, TokenCache.DefaultShared);
-
-            var result = await context.AcquireTokenAsync(resource, appCredentials).ConfigureAwait(false);
-
-            return result.AccessToken;
+            var certPath = Path.Combine(Path.GetDirectoryName(typeof(TradingService).Assembly.Location), "BeanTrader.pfx");
+            return new X509Certificate2(certPath, "password");
         }
 
         public void Dispose()

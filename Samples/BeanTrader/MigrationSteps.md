@@ -33,6 +33,7 @@ This is the step-by-step process used to migrate the Bean Trader sample app to .
     1. `<ApplicationIcon>`
     1. `<Resource>` elements (such as images, icons, etc.)
     1. `<Content>` elements (config files and other files to be deployed with the project)
+    1. `<None>` elements with non-default `<CopyToOutputDirectory>` values. `<None>` items are included automatically, but they will have a `<CopyToOutputDirectory>` of `Never`. `<None>` elements with other `<CopyToOutputDirectory>` values will need to be updated accordingly.
     1. `<PackageReference>` elements (NuGet references)
     1. Add `<DefineConstants>NETCORE</DefineConstants>` to enable having different code paths for .NET Core and .NET Framework projects in the future (using `#if NETCORE`).
         1. Note that I ended up not needing this while porting the Bean Trader sample. In many cases, the constant isn't needed because the code used for .NET Core and .NET Framework is identical. I mention it here only because it can be useful if you're porting an application that needs slightly different code for .NET Core and .NET Framework.
