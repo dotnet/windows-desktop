@@ -1,0 +1,1473 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us" xmlns:msxsl="urn:schemas-microsoft-com:xslt">
+<head>
+    <meta content="en-us" http-equiv="Content-Language" />
+    <meta content="text/html; charset=utf-16" http-equiv="Content-Type" />
+    <title _locid="PortabilityAnalysis0">.NET Portability Report</title>
+    
+
+<style>
+    /* Body style, for the entire document */
+    body {
+        background: #F3F3F4;
+        color: #1E1E1F;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Header1 style, used for the main title */
+    h1 {
+        padding: 10px 0px 10px 10px;
+        font-size: 21pt;
+        background-color: #E2E2E2;
+        border-bottom: 1px #C1C1C2 solid;
+        color: #201F20;
+        margin: 0;
+        font-weight: normal;
+    }
+
+    /* Header2 style, used for "Overview" and other sections */
+    h2 {
+        font-size: 18pt;
+        font-weight: normal;
+        padding: 15px 0 5px 0;
+        margin: 0;
+    }
+
+    /* Header3 style, used for sub-sections, such as project name */
+    h3 {
+        font-weight: normal;
+        font-size: 15pt;
+        margin: 0;
+        padding: 15px 0 5px 0;
+        background-color: transparent;
+    }
+
+    h4 {
+        font-weight: normal;
+        font-size: 13pt;
+        margin: 0;
+        padding: 0 0 0 0;
+        background-color: transparent;
+    }
+
+    /* Paragraph text (for longer informational messages) */
+    p {
+        font-size: 10pt;
+    }
+
+    /* Make sure abbreviations are decorated on all browsers */
+    abbr {
+        text-decoration: none;
+        border-bottom: 1px dotted;
+    }
+
+    /* Table styles */
+    table {
+        border-spacing: 0 0;
+        border-collapse: collapse;
+        font-size: 10pt;
+    }
+
+    table th {
+        background: #E7E7E8;
+        text-align: left;
+        text-decoration: none;
+        font-weight: normal;
+        vertical-align: bottom;
+        padding: 3px 6px 3px 6px;
+    }
+
+    table td {
+        vertical-align: top;
+        padding: 3px 6px 5px 5px;
+        margin: 0px;
+        border: 1px solid #E7E7E8;
+        background: #F7F7F8;
+    }
+
+    .BreakDetails table {
+        table-layout: fixed;
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    .BreakingChangeID {
+        width: 35px;
+    }
+
+    .APIColumn {
+        width: 20%;
+    }
+
+    .LongDescriptionColumn {
+        width: 30%;
+    }
+
+    th.NarrowHeader {
+        height: 68px;
+    }
+
+    .NarrowHeader div {
+        height: 100%;
+        width: 68px;
+        min-width: 68px;
+        word-wrap: normal;
+        transform: rotate(-90deg);
+        -webkit-transform: rotate(-90deg); /* Safari/Chrome */
+        -moz-transform: rotate(-90deg); /* Firefox */
+        -o-transform: rotate(-90deg); /* Opera */
+        -ms-transform: rotate(-90deg); /* IE 9 */
+    }
+
+    .NoBreakingChanges {
+        -moz-box-shadow: inset 0px 0px 0px 2px green;
+        -webkit-box-shadow: inset 0px 0px 0px 2px green;
+        box-shadow: inset 0px 0px 0px 2px green;
+        font-weight: bold;
+    }
+
+    .FewBreakingChanges {
+        -moz-box-shadow: inset 0px 0px 0px 2px orange;
+        -webkit-box-shadow: inset 0px 0px 0px 2px orange;
+        box-shadow: inset 0px 0px 0px 2px orange;
+        font-weight: bold;
+    }
+
+    .ManyBreakingChanges {
+        -moz-box-shadow: inset 0px 0px 0px 2px #dd0000;
+        -webkit-box-shadow: inset 0px 0px 0px 2px #dd0000;
+        box-shadow: inset 0px 0px 0px 2px #dd0000;
+        font-weight: bold;
+    }
+
+    .BreakDetails {
+        margin-left: 30px;
+    }
+
+    .CompatMessage {
+        font-style: italic;
+        font-size: 10pt;
+    }
+
+    .GoodMessage {
+        color: darkgreen;
+    }
+
+    .ToggleButton {
+        font-size: 16px;
+        font-family: monospace;
+        padding: 0px 3px;
+        color: #ffffff;
+        border-radius: 4px;
+        border: 1px solid #657298;
+        background-color: #657298;
+        display: inline-block;
+    }
+
+    .ToggleButton:hover {
+        background-color: #7892c2;
+    }
+
+    .ToggledOff {
+        display: none;
+    }
+
+    .MemberNames ul {
+        list-style-type: none;
+        padding: 0px;
+        margin: 0px;
+    }
+
+    .MemberNames li {
+        padding-bottom: 4px;
+    }
+
+    /* Center text, used in the over views cells that contain message level counts */
+    .textCentered {
+        text-align: center;
+    }
+
+    /* The message cells in message tables should take up all avaliable space */
+    .messageCell {
+        width: 100%;
+    }
+
+    /* Padding around the content after the h1 */
+    #content {
+        padding: 0px 12px 12px 12px;
+    }
+
+    /* The overview table expands to width, with a max width of 97% */
+    #overview table {
+        width: auto;
+        max-width: 75%;
+    }
+
+    /* The messages tables are always 97% width */
+    #messages table {
+        width: 97%;
+    }
+
+    /* All Icons */
+    .IconSuccessEncoded, .IconInfoEncoded, .IconWarningEncoded, .IconErrorEncoded {
+        min-width: 18px;
+        min-height: 18px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    /* Success icon encoded */
+    .IconSuccessEncoded {
+        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+        /* [---XsltValidateInternal-Base64EncodedImage:IconSuccess#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABPElEQVR4Xp1Tv0vDUBi8FqeA4NpBcBLcWnQSApncOnTo4FSnjP0DsnXpH5CxiwbHDg4Zuj4oOEXiJgiC4FDcCkLWmIMc1Pfw+eMgQ77v3Xf3Pe51YKGqqisAEwCR1TIAsiAIblSo6xrdHeJR85Xle3mdmCQKb0PsfqyxxzM8K15HZADl/H5+sHpZwYfxyRjTs+kWwKBx8yoHd2mRiuzF8mkJniWH/13u3Fjrs/EdhsdDFHGB/DLXEJBDLh1MWPAhPo1BLB4WX5yQywHR+m3tVe/t97D52CB/ziG0nIgD/qDuYg8WuCcVZ2YGwlJ3YDugkpR/VNcAEx6GEKhERSr71FuO4YCM4XBdwKvecjIlkSnsO0Hyp/GxSeJAdzBKzpOtnPwyyiPdAZhpZptT04tU+zk7s8czeges//s5C5+CwqrR4/gw+AAAAABJRU5ErkJggg==);
+    }
+
+    /* Information icon encoded */
+    .IconInfoEncoded {
+        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+        /* [---XsltValidateInternal-Base64EncodedImage:IconInformation#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHElEQVR4Xs2TsUoDQRRF7wwoziokjZUKadInhdhukR9YP8DMX1hYW+QvdsXa/QHBbcXC7W0CamWTQnclFutceIQJwwaWNLlwm5k5d94M76mmaeCrrmsLYOocY12FcxZFUeozCqKqqgYA8uevv1H6VuPxcwlfk5N92KHBxfFeCSAxxswlYAW/Xr989x/mv9gkhtyMDhcAxgzRsp7flj8B/HF1RsMXq+NZMkopaHe7lbKxQUEIGbKsYNoGn969060hZBkQex/W8oRQwsQaW2o3Ago2SVcJUzAgY3N0lTCZZm+zPS8HB51gMmS1DEYyOz9acKO1D8JWTlafKIMxdhvlfdyT94Vv5h7P8Ky7nQzACmhvKq3zk3PjW9asz9D/1oigecsioooAAAAASUVORK5CYII=);
+    }
+
+    /* Warning icon encoded */
+    .IconWarningEncoded {
+        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+        /* [---XsltValidateInternal-Base64EncodedImage:IconWarning#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAx0lEQVR4XpWSMQ7CMAxFf4xAyBMLCxMrO8dhaBcuwdCJS3RJBw7SA/QGTCxdWJgiQYWKXJWKIXHIlyw5lqr34tQgEOdcBsCOx5yZK3hCCKdYXneQkh4pEfqzLfu+wVDSyyzFoJjfz9NB+pAF+eizx2Vruts0k15mPgvS6GYvpVtQhB61IB/dk6AF6fS4Ben0uIX5odtFe8Q/eW1KvFeH4e8khT6+gm5B+t3juyDt7n0jpe+CANTd+oTUjN/U3yVaABnSUjFz/gFq44JaVSCXeQAAAABJRU5ErkJggg==);
+    }
+
+    /* Error icon encoded */
+    .IconErrorEncoded {
+        /* Note: Do not delete the comment below. It is used to verify the correctness of the encoded image resource below before the product is released */
+        /* [---XsltValidateInternal-Base64EncodedImage:IconError#Begin#background-image: url(data:image/png;base64,#Separator#);#End#] */
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABQElEQVR4XqWTvUoEQRCE6wYPZUA80AfwAQz23uCMjA7MDRQEIzPBVEyNTQUFIw00vcQTTMzuAh/AxEQQT8HF/3G/oGGnEUGuoNnd6qoZuqltyKEsyzVJq5I6rnUp6SjGeGhESikzzlc1eL7opfuVbrqbU1Zw9NCgtQMaZpY0eNnaaL2fHusvTK5vKu7sjSS1Y4y3QUA6K3e3Mau5UFDyMP7tYF9o8cAHZv68vipoIJg971PZIZ5HiwdvYGGvFVFHmGmZ2MxwmQYPXubPl9Up0tfoMQGetXd6mRbvhBw+boZ6WF7Mbv1+GsHRk0fQmPAH1GfmZirbCfDJ61tw3Px8/8pZsPAG4jlVhcPgZ7adwNWBB68lkRQWFiTgFlbnLY3DGGM7izIJIyT/jjIvEJw6fdJTc6krDzh6aMwMP9bvDH4ADSsa9uSWVJkAAAAASUVORK5CYII=);
+    }
+
+    .tocItem {
+        font-size: 14pt;
+    }
+
+    .compat-subheader {
+        font-weight: 700;
+        font-style: italic;
+    }
+</style>
+</head>
+<body>
+    <h1 _locid="PortabilityReport">.NET Portability Report</h1>
+    <div id="content">
+        <div id="submissionHeader" style="font-size:8pt;">
+            <p>
+                <i>
+                    Submission Id&nbsp;
+                    4b348ff9-880c-489a-b23d-1689692d0d72
+                    <br />
+                    API Catalog last updated on&nbsp;
+                    Thursday, January 9, 2020
+
+                </i>
+            </p>
+
+            <div id="toc">
+                <h2>Contents</h2>
+                <ul>
+                                            <li>
+                            <span class="tocItem"><a href="#Portability Summary">Portability Summary</a></span>
+                        </li>
+                </ul>
+            </div>
+        </div>
+
+
+            <div id="portabilityReport">
+                
+
+
+
+<h2 _locid="SummaryTitle">
+    <a name="Portability Summary"></a>Portability Summary
+</h2>
+<table>
+    <tbody>
+        <tr>
+            <th>Assembly</th>
+                <th>.NET Core + Platform Extensions,Version=v3.1</th>
+                <th>.NET Core,Version=v3.1</th>
+                <th>.NET Standard + Platform Extensions,Version=v2.0</th>
+        </tr>
+
+            <tr>
+                <td><strong><a href="#BeanTraderClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null">
+                    <span class="assembly-name">BeanTraderClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</span>
+                        <span class="assembly-tfm">(.NETFramework,Version=v4.7.2)</span>
+                </a></strong></td>
+                    <td class="text-center">100.00 %</td>
+                    <td class="text-center">93.38 %</td>
+                    <td class="text-center">76.94 %</td>
+            </tr>
+            </tbody>
+</table>
+<div id="details">
+        <h3>Hide rows:</h3>
+        <label>Hide rows that don&#39;t have problems
+            <input type="checkbox" id="row_visibility_checkbox" onchange="ToggleRowVisibility(this)">
+        </label>
+
+        <h3>Hide columns:</h3>
+        <form>
+                <input type="checkbox" id="checkbox1" onchange='onToggleColumnVisibility(this)'>
+                <label for="checkbox1">.NET Core + Platform Extensions,Version=v3.1</label>
+                <input type="checkbox" id="checkbox2" onchange='onToggleColumnVisibility(this)'>
+                <label for="checkbox2">.NET Core,Version=v3.1</label>
+                <input type="checkbox" id="checkbox3" onchange='onToggleColumnVisibility(this)'>
+                <label for="checkbox3">.NET Standard + Platform Extensions,Version=v2.0</label>
+                <input type="checkbox" id="checkbox4" onchange='onToggleColumnVisibility(this)'>
+                <label for="checkbox4">Recommended changes</label>
+        </form>
+
+            <a name="BeanTraderClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null"><h3>
+                <span class="assembly-name">BeanTraderClient, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</span>
+                    <span class="assembly-tfm">(.NETFramework,Version=v4.7.2)</span>
+            </h3></a>
+            <table class="table_portability_details">
+                <tbody>
+                    <tr>
+                            <th>Target type</th>
+                            <th>.NET Core + Platform Extensions,Version=v3.1</th>
+                            <th>.NET Core,Version=v3.1</th>
+                            <th>.NET Standard + Platform Extensions,Version=v2.0</th>
+                            <th>Recommended changes</th>
+                    </tr>
+                        <tr>
+                            <td>System.AppDomain</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_SetupInformation</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td>Remove usage.</td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.AppDomainSetup</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td>Remove usage.</td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_ApplicationBase</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td>Remove usage.</td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.Channels.Binding</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.Channels.IChannel</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.ClientBase`1</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.CommunicationException</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.CommunicationState</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.Description.ClientCredentials</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_ClientCertificate</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_ServiceCertificate</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.DuplexClientBase`1</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.EndpointAddress</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.EndpointNotFoundException</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.IClientChannel</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.ICommunicationObject</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.IContextChannel</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.IExtensibleObject`1</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.InstanceContext</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.OperationContractAttribute</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.Security.X509CertificateInitiatorClientCredential</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_Certificate(System.Security.Cryptography.X509Certificates.X509Certificate2)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.Security.X509CertificateRecipientClientCredential</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_Authentication</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.Security.X509CertificateValidationMode</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.Security.X509ServiceCertificateAuthentication</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_CertificateValidationMode(System.ServiceModel.Security.X509CertificateValidationMode)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.ServiceContractAttribute</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.ServiceModel.SessionMode</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td><td class="IconSuccessEncoded" title="Supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Application</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">FindResource(System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_Current</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_MainWindow</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">LoadComponent(System.Object,System.Uri)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">OnStartup(System.Windows.StartupEventArgs)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">Run</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.Button</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.ContentControl</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_Content(System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.Control</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_Background(System.Windows.Media.Brush)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_HorizontalContentAlignment(System.Windows.HorizontalAlignment)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.DockPanel</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.Frame</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">Navigate(System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.ListView</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.Page</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_NavigationService</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.Primitives.ButtonBase</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">add_Click(System.Windows.RoutedEventHandler)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.Primitives.TextBoxBase</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">SelectAll</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.TextBlock</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.TextBox</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_Text</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_Text(System.String)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Controls.UserControl</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Data.IValueConverter</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.DependencyObject</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">GetValue(System.Windows.DependencyProperty)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">SetValue(System.Windows.DependencyProperty,System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.DependencyProperty</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">Register(System.String,System.Type,System.Type)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">Register(System.String,System.Type,System.Type,System.Windows.PropertyMetadata)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.DependencyPropertyChangedEventArgs</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_NewValue</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.FrameworkElement</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">add_Loaded(System.Windows.RoutedEventHandler)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">add_Unloaded(System.Windows.RoutedEventHandler)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_DataContext</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_DataContext(System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_Style(System.Windows.Style)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.HorizontalAlignment</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Input.MouseButtonEventHandler</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.Object,System.IntPtr)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Input.MouseEventArgs</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Markup.IComponentConnector</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">Connect(System.Int32,System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Markup.InternalTypeHelper</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Markup.IStyleConnector</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">Connect(System.Int32,System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Media.Brush</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Media.Color</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">FromRgb(System.Byte,System.Byte,System.Byte)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Media.SolidColorBrush</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.Windows.Media.Color)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.MessageBox</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">Show(System.String)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.MessageBoxResult</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Navigation.NavigationService</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">GoBack</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">Navigate(System.Object)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.PropertyChangedCallback</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.Object,System.IntPtr)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.PropertyMetadata</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.Windows.PropertyChangedCallback)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.ResourceDictionaryLocation</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Resources.AssemblyAssociatedContentFileAttribute</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.String)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.RoutedEventArgs</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_Handled(System.Boolean)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.RoutedEventHandler</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.Object,System.IntPtr)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.StartupEventArgs</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Style</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.ThemeInfoAttribute</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">#ctor(System.Windows.ResourceDictionaryLocation,System.Windows.ResourceDictionaryLocation)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Threading.Dispatcher</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">Invoke(System.Action)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">Invoke``1(System.Func{``0})</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Threading.DispatcherObject</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_Dispatcher</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.UIElement</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">add_GotFocus(System.Windows.RoutedEventHandler)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">add_PreviewMouseDown(System.Windows.Input.MouseButtonEventHandler)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">Focus</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">get_IsKeyboardFocusWithin</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">set_IsEnabled(System.Boolean)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Visibility</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>System.Windows.Window</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                            <td></td>
+                        </tr>
+                            <tr>
+                                <td style="padding-left:2em">add_Closing(System.ComponentModel.CancelEventHandler)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">remove_Closing(System.ComponentModel.CancelEventHandler)</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                            <tr>
+                                <td style="padding-left:2em">Show</td>
+<td class="IconSuccessEncoded" title="Supported"></td><td class="IconSuccessEncoded" title="Supported"></td><td class="IconErrorEncoded" title="Not supported"></td>                                <td></td>
+                            </tr>
+                        <tr>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                                <td>&nbsp;</td>
+                        </tr>
+                </tbody>
+            </table>
+            <p>
+                <a href="#Portability Summary">Back to Summary</a>
+            </p>
+</div>
+
+
+            </div>
+    </div>
+
+    
+
+
+<script>
+    // Toggle the element controlled by a toggle button on or off
+    function toggle(caller) {
+        var elementName = this.id.substr(6);
+        var element = document.getElementById(elementName);
+        var currentClass = element.getAttribute('class');
+        if (currentClass === null) {
+            // If the element has no class, then it's on. Turn it off.
+            element.setAttribute('class', 'ToggledOff');
+            this.setAttribute('title', 'Expand');
+            this.innerHTML = '+';
+        }
+        else if (currentClass.search(/\bToggledOff\b/) > -1) {
+            // If it has ToggledOff as a class, then it's off. Turn it on.
+            element.setAttribute('class', currentClass.replace(/\bToggledOff\b/, '').trim());
+            this.setAttribute('title', 'Collapse');
+            this.innerHTML = '&#8212';
+        }
+        else {
+            // If it doesn't have ToggledOff as a class, then it's on. Turn it off.
+            element.setAttribute('class', currentClass.concat(' ToggledOff').trim());
+            this.setAttribute('title', 'Expand');
+            this.innerHTML = '+';
+        }
+    }
+
+    // Hook up toggle buttons' click events
+    var toggleButtons = document.getElementsByClassName('ToggleButton');
+    for (var i = 0; i < toggleButtons.length; i++) {
+        toggleButtons[i].addEventListener('click', toggle);
+    }
+
+    // Turn off any elements that should begin collapsed. Note that this is done with the extra
+    // BeginToggledOff class instead of applying ToggledOff directly to these elements because they should be
+    // visible if javascript is unavailable for some reason.
+    var beginCollapsed = document.getElementsByClassName('BeginToggledOff');
+    for (var i = 0; i < beginCollapsed.length; i++) {
+        var currentClass = beginCollapsed[i].getAttribute('class');
+        beginCollapsed[i].setAttribute('class', currentClass.concat(' ToggledOff').trim());
+    }
+
+    // Toggle the visibility of a column in the portability report detail
+    // table (id='table_portability_details')
+    function ToggleColumnVisibility(columnNumber, visible) {
+        var style = visible ? '' : 'none';
+
+        var tables = document.getElementsByClassName('table_portability_details');
+        for (var table = 0; table < tables.length; table++) {
+            var rows = tables[table].getElementsByTagName('tr');
+
+            var headers = rows[0].getElementsByTagName('th');
+            headers[columnNumber].style.display = style;
+
+            for (var row = 1; row < rows.length; row++) {
+                var cells = rows[row].getElementsByTagName('td')
+                cells[columnNumber].style.display = style;
+            }
+        }
+    }
+
+    // Event handler for checkboxes to hide columns in the portability report detail table.
+    function onToggleColumnVisibility(element) {
+        var columnId = parseInt(element.id.substr(-1));
+        var visible = !element.checked;
+        ToggleColumnVisibility(columnId, visible);
+        // Refresh the rows because showing columns could make error cells visible.
+        ToggleRowVisibility(document.getElementById('row_visibility_checkbox'));
+    }
+
+
+    function ToggleRowVisibility(element){
+        var style = element.checked ? 'none' : '';
+
+        var tables = document.getElementsByClassName('table_portability_details');
+        for (var table = 0; table < tables.length; table++) {
+            var rows = tables[table].getElementsByTagName('tr');
+            if (style === '') { // show all rows
+                for (var row = 0; row < rows.length; row++)
+                    if (rows[row].style.display === 'none') rows[row].style.display = style; // show previously hidden rows
+            } else {
+                var row = 1;
+                while (row < rows.length) { // work on one Target type at a time.
+                    var typeRow = rows[row];
+                    var typeOrChildVisible = false;
+                    var j = row;
+                    var cells = rows[j].getElementsByTagName('td');
+                    while (cells[0].innerHTML !== '&nbsp;') { // Types are separated by blank rows.
+                        var allCellsSuccess = true;
+                        // No need to check the first column (Target type) and the last column (Recommended changes)
+                        for (var cel = 1; cel < cells.length - 1; cel++) {
+                            var cell = cells[cel];
+                            // Keep rows that have visible errors
+                            if (cell.classList.contains('IconErrorEncoded') && cell.style.display !== 'none') {
+                                allCellsSuccess = false;
+                                typeOrChildVisible = true;
+                                break;
+                            }
+                        }
+                        // Hide all success row
+                        if (allCellsSuccess) rows[j].style.display = style;
+                        else rows[j].style.display = '';
+                        j += 1;
+                        cells = rows[j].getElementsByTagName('td');
+                    }
+                    if (typeOrChildVisible) {
+                        typeRow.style.display = ''; // make sure they are visible
+                        rows[j].style.display = '';
+                    } else {
+                        typeRow.style.display = style; // hide the type row
+                        rows[j].style.display = style;  // hide the blank separator row
+                    }
+                    row = j + 1;
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

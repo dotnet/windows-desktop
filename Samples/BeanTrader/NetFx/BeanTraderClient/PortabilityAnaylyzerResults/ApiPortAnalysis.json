@@ -1,0 +1,1579 @@
+{
+  "SubmissionId": "4b348ff9-880c-489a-b23d-1689692d0d72",
+  "ApplicationName": null,
+  "CatalogLastUpdated": "2020-01-09T15:07:42.2966207+00:00",
+  "MissingDependencies": [
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.RoutedEventArgs.set_Handled(System.Boolean)",
+      "TypeDocId": "T:System.Windows.RoutedEventArgs",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Navigation.NavigationService",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.InstanceContext",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Threading.DispatcherObject",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.DependencyProperty.Register(System.String,System.Type,System.Type)",
+      "TypeDocId": "T:System.Windows.DependencyProperty",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.Description.ClientCredentials.get_ClientCertificate",
+      "TypeDocId": "T:System.ServiceModel.Description.ClientCredentials",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.UIElement.add_PreviewMouseDown(System.Windows.Input.MouseButtonEventHandler)",
+      "TypeDocId": "T:System.Windows.UIElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.ClientBase`1",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.PropertyChangedCallback",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.FrameworkElement",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.Control.set_HorizontalContentAlignment(System.Windows.HorizontalAlignment)",
+      "TypeDocId": "T:System.Windows.Controls.Control",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Media.Color",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.ServiceContractAttribute",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Data.IValueConverter",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.Frame",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.AppDomainSetup",
+      "TypeDocId": null,
+      "RecommendedChanges": "Remove usage.",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.0",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.MessageBoxResult",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Application.get_MainWindow",
+      "TypeDocId": "T:System.Windows.Application",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Visibility",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.FrameworkElement.add_Loaded(System.Windows.RoutedEventHandler)",
+      "TypeDocId": "T:System.Windows.FrameworkElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.ThemeInfoAttribute.#ctor(System.Windows.ResourceDictionaryLocation,System.Windows.ResourceDictionaryLocation)",
+      "TypeDocId": "T:System.Windows.ThemeInfoAttribute",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.DependencyPropertyChangedEventArgs",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Input.MouseButtonEventHandler.#ctor(System.Object,System.IntPtr)",
+      "TypeDocId": "T:System.Windows.Input.MouseButtonEventHandler",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Threading.Dispatcher",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.InstanceContext.#ctor(System.Object)",
+      "TypeDocId": "T:System.ServiceModel.InstanceContext",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.RoutedEventArgs",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Resources.AssemblyAssociatedContentFileAttribute.#ctor(System.String)",
+      "TypeDocId": "T:System.Windows.Resources.AssemblyAssociatedContentFileAttribute",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.OperationContractAttribute.#ctor",
+      "TypeDocId": "T:System.ServiceModel.OperationContractAttribute",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.PropertyMetadata",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.IdentityModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.Security.X509CertificateValidationMode",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.TextBox.set_Text(System.String)",
+      "TypeDocId": "T:System.Windows.Controls.TextBox",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.ServiceContractAttribute.#ctor",
+      "TypeDocId": "T:System.ServiceModel.ServiceContractAttribute",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.Control.set_Background(System.Windows.Media.Brush)",
+      "TypeDocId": "T:System.Windows.Controls.Control",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.Frame.Navigate(System.Object)",
+      "TypeDocId": "T:System.Windows.Controls.Frame",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Threading.DispatcherObject.get_Dispatcher",
+      "TypeDocId": "T:System.Windows.Threading.DispatcherObject",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Media.Color.FromRgb(System.Byte,System.Byte,System.Byte)",
+      "TypeDocId": "T:System.Windows.Media.Color",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Window.add_Closing(System.ComponentModel.CancelEventHandler)",
+      "TypeDocId": "T:System.Windows.Window",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.DependencyObject.GetValue(System.Windows.DependencyProperty)",
+      "TypeDocId": "T:System.Windows.DependencyObject",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.FrameworkElement.get_DataContext",
+      "TypeDocId": "T:System.Windows.FrameworkElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Style",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.Windows.Markup.IComponentConnector",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.ICommunicationObject",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Threading.Dispatcher.Invoke(System.Action)",
+      "TypeDocId": "T:System.Windows.Threading.Dispatcher",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.UserControl.#ctor",
+      "TypeDocId": "T:System.Windows.Controls.UserControl",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Markup.IStyleConnector.Connect(System.Int32,System.Object)",
+      "TypeDocId": "T:System.Windows.Markup.IStyleConnector",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.Description.ClientCredentials",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.PropertyChangedCallback.#ctor(System.Object,System.IntPtr)",
+      "TypeDocId": "T:System.Windows.PropertyChangedCallback",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.Primitives.TextBoxBase",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Application.FindResource(System.Object)",
+      "TypeDocId": "T:System.Windows.Application",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.ContentControl.set_Content(System.Object)",
+      "TypeDocId": "T:System.Windows.Controls.ContentControl",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.Page.get_NavigationService",
+      "TypeDocId": "T:System.Windows.Controls.Page",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.StartupEventArgs",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.DependencyObject",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.UIElement.Focus",
+      "TypeDocId": "T:System.Windows.UIElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.Primitives.ButtonBase.add_Click(System.Windows.RoutedEventHandler)",
+      "TypeDocId": "T:System.Windows.Controls.Primitives.ButtonBase",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Resources.AssemblyAssociatedContentFileAttribute",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.Control",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.Security.X509CertificateInitiatorClientCredential",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.ResourceDictionaryLocation",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Threading.Dispatcher.Invoke``1(System.Func{``0})",
+      "TypeDocId": "T:System.Windows.Threading.Dispatcher",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Markup.IStyleConnector",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Navigation.NavigationService.Navigate(System.Object)",
+      "TypeDocId": "T:System.Windows.Navigation.NavigationService",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.IContextChannel",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.MessageBox.Show(System.String)",
+      "TypeDocId": "T:System.Windows.MessageBox",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.UIElement",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.ContentControl",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Window.remove_Closing(System.ComponentModel.CancelEventHandler)",
+      "TypeDocId": "T:System.Windows.Window",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.IExtensibleObject`1",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.FrameworkElement.set_DataContext(System.Object)",
+      "TypeDocId": "T:System.Windows.FrameworkElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.OperationContractAttribute",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.Primitives.TextBoxBase.SelectAll",
+      "TypeDocId": "T:System.Windows.Controls.Primitives.TextBoxBase",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.DependencyPropertyChangedEventArgs.get_NewValue",
+      "TypeDocId": "T:System.Windows.DependencyPropertyChangedEventArgs",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.Channels.Binding",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.CommunicationException",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Application.#ctor",
+      "TypeDocId": "T:System.Windows.Application",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Markup.InternalTypeHelper.#ctor",
+      "TypeDocId": "T:System.Windows.Markup.InternalTypeHelper",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.DependencyObject.SetValue(System.Windows.DependencyProperty,System.Object)",
+      "TypeDocId": "T:System.Windows.DependencyObject",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.DuplexClientBase`1",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.AppDomainSetup.get_ApplicationBase",
+      "TypeDocId": "T:System.AppDomainSetup",
+      "RecommendedChanges": "Remove usage.",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.0",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.FrameworkElement.set_Style(System.Windows.Style)",
+      "TypeDocId": "T:System.Windows.FrameworkElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.DependencyProperty.Register(System.String,System.Type,System.Type,System.Windows.PropertyMetadata)",
+      "TypeDocId": "T:System.Windows.DependencyProperty",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.TextBox",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.UserControl",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.MessageBox",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Input.MouseEventArgs",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.UIElement.set_IsEnabled(System.Boolean)",
+      "TypeDocId": "T:System.Windows.UIElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.IClientChannel",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.Security.X509ServiceCertificateAuthentication",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.AppDomain.get_SetupInformation",
+      "TypeDocId": "T:System.AppDomain",
+      "RecommendedChanges": "Remove usage.",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.0",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.set_Certificate(System.Security.Cryptography.X509Certificates.X509Certificate2)",
+      "TypeDocId": "T:System.ServiceModel.Security.X509CertificateInitiatorClientCredential",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Media.SolidColorBrush.#ctor(System.Windows.Media.Color)",
+      "TypeDocId": "T:System.Windows.Media.SolidColorBrush",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.RoutedEventHandler.#ctor(System.Object,System.IntPtr)",
+      "TypeDocId": "T:System.Windows.RoutedEventHandler",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.ThemeInfoAttribute",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.RoutedEventHandler",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.UIElement.get_IsKeyboardFocusWithin",
+      "TypeDocId": "T:System.Windows.UIElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.DockPanel",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.Security.X509CertificateRecipientClientCredential",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.TextBox.get_Text",
+      "TypeDocId": "T:System.Windows.Controls.TextBox",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.UIElement.add_GotFocus(System.Windows.RoutedEventHandler)",
+      "TypeDocId": "T:System.Windows.UIElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.DependencyProperty",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.Description.ClientCredentials.get_ServiceCertificate",
+      "TypeDocId": "T:System.ServiceModel.Description.ClientCredentials",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.CommunicationState",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.Channels.IChannel",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.HorizontalAlignment",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.Page",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.EndpointNotFoundException",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.TextBlock",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.Button",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.Security.X509ServiceCertificateAuthentication.set_CertificateValidationMode(System.ServiceModel.Security.X509CertificateValidationMode)",
+      "TypeDocId": "T:System.ServiceModel.Security.X509ServiceCertificateAuthentication",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Window.Show",
+      "TypeDocId": "T:System.Windows.Window",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.PropertyMetadata.#ctor(System.Windows.PropertyChangedCallback)",
+      "TypeDocId": "T:System.Windows.PropertyMetadata",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Markup.InternalTypeHelper",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Application.get_Current",
+      "TypeDocId": "T:System.Windows.Application",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.Primitives.ButtonBase",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Application",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Controls.Page.#ctor",
+      "TypeDocId": "T:System.Windows.Controls.Page",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Application.Run",
+      "TypeDocId": "T:System.Windows.Application",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.Windows.Markup.IComponentConnector.Connect(System.Int32,System.Object)",
+      "TypeDocId": "T:System.Windows.Markup.IComponentConnector",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "M:System.ServiceModel.Security.X509CertificateRecipientClientCredential.get_Authentication",
+      "TypeDocId": "T:System.ServiceModel.Security.X509CertificateRecipientClientCredential",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Media.Brush",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.EndpointAddress",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "1.6"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Media.SolidColorBrush",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Application.LoadComponent(System.Object,System.Uri)",
+      "TypeDocId": "T:System.Windows.Application",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Window",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Controls.ListView",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.FrameworkElement.add_Unloaded(System.Windows.RoutedEventHandler)",
+      "TypeDocId": "T:System.Windows.FrameworkElement",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Navigation.NavigationService.GoBack",
+      "TypeDocId": "T:System.Windows.Navigation.NavigationService",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "T:System.Windows.Input.MouseButtonEventHandler",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+      "MemberDocId": "T:System.ServiceModel.SessionMode",
+      "TypeDocId": null,
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "2.0",
+        null,
+        "2.0"
+      ]
+    },
+    {
+      "DefinedInAssemblyIdentity": "PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35",
+      "MemberDocId": "M:System.Windows.Application.OnStartup(System.Windows.StartupEventArgs)",
+      "TypeDocId": "T:System.Windows.Application",
+      "RecommendedChanges": "",
+      "SourceCompatibleChange": "",
+      "TargetStatus": [
+        "3.0",
+        "3.1",
+        null
+      ]
+    }
+  ],
+  "UnresolvedUserAssemblies": [
+    "MahApps.Metro, Version=1.6.5.1, Culture=neutral, PublicKeyToken=null",
+    "Nito.AsyncEx.Coordination, Version=5.0.0.0, Culture=neutral, PublicKeyToken=null",
+    "Castle.Windsor, Version=5.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc"
+  ],
+  "Targets": [
+    ".NET Core + Platform Extensions,Version=v3.1",
+    ".NET Core,Version=v3.1",
+    ".NET Standard + Platform Extensions,Version=v2.0"
+  ],
+  "BreakingChanges": [],
+  "BreakingChangeSkippedAssemblies": []
+}
