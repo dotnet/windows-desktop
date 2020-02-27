@@ -1,5 +1,6 @@
 ﻿using Castle.Windsor;
 using Castle.Windsor.Installer;
+using System.Reflection;
 
 namespace BeanTraderClient.DependencyInjection
 {
@@ -18,7 +19,11 @@ namespace BeanTraderClient.DependencyInjection
                     {
                         if (container == null)
                         {
-                            container = new WindsorContainer().Install(FromAssembly.This());
+                            using (var installer = new WindsorContainer())
+                            {
+                                container = installer.Install(
+                                    FromAssembly.Instance(Assembly.GetCallingAssembly()));
+                            }
                         }
                     }
                 }

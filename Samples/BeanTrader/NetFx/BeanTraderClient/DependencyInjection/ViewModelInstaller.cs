@@ -2,6 +2,7 @@
 using Castle.MicroKernel.SubSystems.Configuration;
 using Castle.Windsor;
 using System;
+using System.Reflection;
 
 namespace BeanTraderClient.DependencyInjection
 {
@@ -9,7 +10,7 @@ namespace BeanTraderClient.DependencyInjection
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Classes.FromThisAssembly()
+            container?.Register(Classes.FromAssembly(Assembly.GetCallingAssembly())
                 .Where(t => t.Name.EndsWith("ViewModel", StringComparison.Ordinal))
                 .LifestyleTransient());
         }

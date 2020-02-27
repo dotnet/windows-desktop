@@ -7,7 +7,7 @@
     </Style>
 
     <Style x:Key="DefaultWindowStyle" TargetType="{x:Type mahAppsControls:MetroWindow}">
-        <Setter Property="TitleCaps" Value="False" />
+        <Setter Property="TitleCharacterCasing" Value="False" />
     </Style>
 
     <Style x:Key="DefaultControlStyle" TargetType="{x:Type Control}">

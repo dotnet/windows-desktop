@@ -23,15 +23,13 @@ namespace BeanTraderClient
             var themesDirectory = Path.Combine(AppDomain.CurrentDomain.SetupInformation.ApplicationBase, ThemesRelativePath);
             foreach (var accentFile in Directory.GetFiles(themesDirectory, $"*{AccentThemeExtension}"))
             {
-                var fileName = Path.GetFileName(accentFile);
-                ThemeManager.AddAccent(fileName.Substring(0, fileName.Length - AccentThemeExtension.Length), new Uri(accentFile));
+                //var fileName = Path.GetFileName(accentFile);
+                ThemeManager.AddTheme(new Uri(accentFile));
             }
 
             // In the future, we could have multiple themes and store preferences in the registry
-            var (currentTheme, _) = ThemeManager.DetectAppStyle(Application.Current);
-            ThemeManager.ChangeAppStyle(Application.Current,
-                ThemeManager.GetAccent(ConfigurationManager.AppSettings["DefaultTheme"]),
-                currentTheme);
+            var currentTheme = ThemeManager.DetectTheme(Application.Current);
+            ThemeManager.ChangeTheme(Application.Current, currentTheme);
 
             Bootstrapper.Container.Resolve<MainWindow>().Show();
 
