@@ -1,12 +1,12 @@
 ﻿using BeanTrader;
 using BeanTrader.Models;
+using CoreWCF;
 using Serilog;
 using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
-using System.ServiceModel;
 using System.Text;
 using System.Threading;
 
