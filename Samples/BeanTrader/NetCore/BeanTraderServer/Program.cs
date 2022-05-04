@@ -1,6 +1,12 @@
-﻿using CoreWCF.Configuration;
+﻿using BeanTrader;
+using CoreWCF;
+using CoreWCF.Configuration;
+using CoreWCF.Description;
 using CoreWCF.Security;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Protocols.WsTrust;
 using Serilog;
 using System;
 using System.IO;
@@ -20,12 +26,22 @@ namespace BeanTraderServer
             // Set NetTcp port (previously this was done in configuration,
             // but CoreWCF requires it be done in code)
             builder.WebHost.UseNetTcp(8090);
+            builder.WebHost.ConfigureKestrel(options =>
+            {
+                options.ListenAnyIP(8080);
+            });
 
             // Add CoreWCF services to the ASP.NET Core app's DI container
-            builder.Services.AddServiceModelServices();
-            builder.Services.AddServiceModelConfigurationManagerFile("wcf.config");
+            builder.Services.AddServiceModelServices()
+                            .AddServiceModelConfigurationManagerFile("wcf.config")
+                            .AddServiceModelMetadata();
 
             var app = builder.Build();
+
+            // Enable getting metadata/wsdl
+            var serviceMetadataBehavior = app.Services.GetRequiredService<ServiceMetadataBehavior>();
+            serviceMetadataBehavior.HttpGetEnabled = true;
+            serviceMetadataBehavior.HttpGetUrl = new Uri("http://localhost:8080/metadata");
 
             // Configure CoreWCF endpoints in the ASP.NET Core host
             app.UseServiceModel(serviceBuilder =>
